@@ -1,0 +1,242 @@
+.price {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 70px 0 80px;
+}
+
+.price-subtitle span {
+	color: var(--color-purple-dark);
+	position: relative;
+}
+
+.price-subtitle span::after {
+	content: '';
+	bottom: 1px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 100%;
+	border-radius: 999px;
+	height: 12px;
+	background: var(--color-yellow-dark);
+	position: absolute;
+}
+
+.price-title {
+	font-size: 64px;
+	font-family: var(--font-family-b);
+}
+
+.price-subtitle {
+	font-size: 42px;
+	font-family: var(--font-family-r);
+	color: var(--color-gray-32);
+	margin: 40px 0;
+}
+
+
+.price-card-title {
+	font-size: 18px;
+	font-family: var(--font-family-m);
+	color: var(--color-purple-dark);
+	display: flex;
+	justify-content: space-between;
+}
+.price-card-title div {
+	border: 1px solid;
+	border-radius: 999px;
+	border-color: var(--color-purple-dark);
+	Width: 90px;
+	Height: 32px;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	padding: 8px;
+}
+
+
+.price-price {
+	font-size: 48px;
+	font-family: var(--font-family-b);
+}
+
+
+.price-cards {
+	display: flex;
+/*	gap: 30px; - так как не поддерживается некоторыми браузерами, заменим на маргин*/
+}
+
+.price-cards li {
+	font-size: 18px;
+	margin-bottom: 16px;
+	margin-top: 24px; 
+	font-family: var(--font-family-r);
+	list-style-type: none;  /*убрали точки*/
+	display: flex;
+	align-items: center;
+
+}
+
+.price-cards li::before {
+	content: '';
+	display: block;
+	width: 32px;
+	height: 32px;
+	flex-shrink: 0;
+	border-radius: 999px;
+	margin-right: 16px;
+	background: url(../images/icons/icon-check.svg) no-repeat center;
+	background-color: var(--color-gray-24);
+}
+
+
+
+.price-card {
+	position: relative;
+	margin-right: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 32px;
+	border-radius: 16px;
+	/*height: 536px;*/
+	background-color: white;
+}
+
+.price-card::after {
+	position: absolute;
+	content: '';
+	z-index: -1;
+	left: -30px;
+	bottom: -30px;
+	width: 200px;
+	height: 130px;
+	background: url(../images/background/Wiggle.svg);
+	opacity: 0;
+	transform: translate(10px, -10px);
+}
+
+.price-card:hover {
+	box-shadow: 0px 8px 8px rgba(38, 50, 56, 0.12), 0px 16px 24px rgba(38, 50, 56, 0.08);
+	transition: var(--animation);
+}
+.price-card:hover::after {
+	transition: var(--animation);
+	opacity: 1;
+	transform: translate(0px, 0px);
+}
+
+
+
+.price-card:nth-child(2) li::before {
+	background-color: var(--color-yellow-dark);
+}
+.price-card:nth-child(3) li::before {
+	background-color: var(--color-green-light);
+}
+
+
+.price-card-service {
+	padding: 0;
+}
+
+
+.price-card:last-child {
+	margin-right: 0;
+}
+
+.price-button {
+	Width: 100%;
+	Height: 64px;
+	font-size: 18px;
+}
+
+.price-card:nth-child(2) .price-button {
+	font-size: 24px;
+}
+
+@media (max-width: 950px) {
+	.price-cards {
+		padding: 0px 25px;
+	}
+	.price-card {
+		padding: 14px;
+		margin-right: 24px;
+	}
+}
+
+@media (max-width: 700px) {
+	.price {
+		padding-top: 0;
+	}
+	.price-title {
+		font-size: 8vw;
+	}
+	.price-subtitle {
+		font-size: 5vw;
+	}
+	.price-cards {
+		flex-direction: column;
+	}
+	.price-card {
+		margin: 0 0 15px 0;
+		padding: 14px;
+		box-shadow: 0px 8px 8px rgba(38, 50, 56, 0.12), 0px 16px 24px rgba(38, 50, 56, 0.08);
+	}
+	.price-card::after {
+		content: none;
+	}	
+}
+
+@media (max-width: 500px) {
+	.price-title {
+		font-size: 10vw;
+	}
+	.price-subtitle {
+		margin-top: 8px;
+		font-size: 7vw;
+		font-family: var(--font-family-l);
+	}
+	.price-price {
+		font-size: 24px;
+	}
+	h4 {
+		margin-top: 12px;
+	}
+	.price-cards li::before {
+		width: 24px;
+		height: 24px;
+		margin-right: 8px;
+	}
+	.price-cards li {
+		font-size: 14px;
+	}
+	.price-button {
+		height: 48px;
+	}
+	.price-card:nth-child(2) .price-button {
+		font-size: 18px;
+		background-color: var(--color-white);
+		color: var(--color-black);
+	}
+	.price-card:nth-child(2) {
+		background-color: var(--color-purple-dark);
+	}
+	.price-card-title span {
+		color: var(--color-green-light);
+	}
+	.price-card-title div {
+		color: var(--color-green-light);
+		border-color: var(--color-green-light);
+	}
+	.price-card:nth-child(2) h4 {
+		color: var(--color-white);
+		text-shadow: 0px 4px 0px #000000;
+	}
+	.price-card:nth-child(2) li {
+		color: var(--color-white);
+	}
+}

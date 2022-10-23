@@ -1,0 +1,261 @@
+.footer {
+	padding: 80px 135px 135px 135px;
+	background: url(../images/background/Wave-footer.svg) no-repeat;
+	background-position: bottom;
+	background-size: contain;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.footer-title {
+	font-family: var(--font-family-m);
+	color: var(--color-gray-32);
+	margin-bottom: 8px;
+}
+
+.footer-icons > a > img {
+	margin-right: 30px;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 40px;
+}
+
+
+.footer-icons > a {
+	outline: none;
+}
+
+
+.footer-icons img:hover {
+	background: var(--color-yellow-light);
+	border-radius: 999px;
+	transition: var(--animation);
+	cursor: pointer;
+}
+
+.footer-icons a:focus img {
+	background: var(--color-yellow-light);
+	border-radius: 999px;
+	transition: var(--animation);
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+	grid-column-gap: 30px;
+	grid-row-gap: 16px;
+	font-size: 14px;
+	font-family: var(--font-family-r);
+	color: black;
+	text-decoration: none;
+	margin-top: 16px;
+}
+
+.footer-grid a {
+	color: black;
+	outline: none;
+}
+
+.footer-grid a:hover,
+.footer-grid a:focus {
+	text-decoration: underline; 
+	transition: var(--animation); /*не работает, чтобы работало, нужно ставить border-botom: 1px solid transparent(прозрачный) 
+									по умолчанию у каждого, и при фокусе проявлять цвет у бордера, тогда анимация заработает.*/
+}
+
+.footer-email {
+	Width: 570px;
+	Height: 40px;
+	font-size: 32px;
+	font-family: var(--font-family-m);
+	margin-bottom: 48px;
+	outline: none;
+}
+
+.footer-email:focus,
+.footer-email:hover {
+	opacity: 0.45;
+	transition: var(--animation);
+}
+
+.footer-email a {
+	color: var(--color-purple-dark);
+}
+
+.footer-feedback div {
+	display: flex; /*убрали отступ между инпутами(появидся из-за того, что расположили их на разных строчках)*/
+}
+
+.footer-feedback div:first-child {
+	margin-bottom: 30px;
+}
+.footer-feedback label {
+	position: relative;
+}
+
+.footer-feedback label > div {
+	width: 100%;
+	height: 100%;
+	background: var(--color-gray-24);
+	border-radius: 16px;
+	opacity: 0.24;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.footer-feedback input {
+	position: relative;
+	Width: 270px;
+	Height: 48px;
+	background: transparent;	
+	font-size: 18px;
+	border: none;
+	border-radius: 16px;
+	padding: 8px;
+	outline: none;
+	padding: 8px 16px;
+	padding-right: 40px; /*чтобы текст не заезжал на иконку*/
+}
+
+
+
+.footer-forms label:first-child {
+	margin-right: 30px;
+}
+.footer-forms label::after {
+	content: '';
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+}
+.footer-user-ico::after {
+	background: url(../images/icons/icon-user.svg);
+	background-repeat: no-repeat;
+}
+.footer-email-ico::after {
+	background: url(../images/icons/icon-mail.svg);
+	background-repeat: no-repeat;
+}
+.footer-feedback-textarea::after {
+	background: url(../images/icons/icon-edit.svg);
+	background-repeat: no-repeat;
+}
+
+
+
+
+.footer-feedback input::placeholder {
+	color: black;
+}
+
+.footer-feedback textarea::placeholder {
+	color: var(--color-purple-dark);
+	font-family: var(--font-family-b);
+}
+
+.footer-feedback textarea {
+	Width: 370px;
+	Height: 80px;
+	resize: none;
+	font-size: 18px;
+	border-radius: 16px;
+	border: none;
+	padding: 16px;
+	outline: none;
+	background: transparent;
+	color: var(--color-purple-dark);
+}
+
+.footer-feedback button {
+	Width: 170px;
+	Height: 80px;
+	
+}
+
+.footer-feedback-textarea > div {
+	border: 2px solid var(--color-purple-dark);
+	opacity: 0.24;
+}
+
+
+.footer-feedback label:hover > div {
+	opacity: .45;
+	transition:	var(--animation);
+}
+.footer-feedback textarea:focus + div,
+.footer-feedback input:focus + div {
+	opacity: .45;
+	transition:	var(--animation);
+}
+
+
+@media (max-width: 1250px) {
+	.footer {
+		padding: 80px 25px 135px 25px;
+	}
+}
+
+@media (max-width: 1050px) {
+	.footer {
+		padding: 15px 25px 135px 25px;
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 50px;
+	}
+}
+
+@media (max-width: 700px) {
+	.footer-forms {
+		width: 77%;
+	}
+	.footer-feedback > div {
+		flex-direction: column;
+	}
+	.footer-forms label:first-child {
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+	.footer-feedback button {
+		height: 48px;
+		font-size: 18px;
+		align-self: flex-end;
+	}
+	.footer-email {
+		width: 100%;
+	}
+	.footer-feedback input,
+	.footer-feedback textarea {
+		width: 100%;
+		padding-right: 40px;
+		/*overflow-y: hidden;*/
+	}
+
+}
+
+@media (max-width: 500px) {
+	.footer-info > div:last-child,
+	.footer-title {
+		display: none;
+	}
+	.footer-email a {
+		font-size: 7vw;
+	}
+	.footer-icons > a > img {
+		margin: 10px;
+	}
+	.footer-feedback button {
+		width: 120px;
+		height: 34px;
+	}
+	.footer {
+		padding-bottom: 20px;
+	}
+}
